@@ -90,6 +90,8 @@ module ChargebeeRails
     def card_expired; end
 
     def card_deleted; end
+    
+    def payment_source_updated; end
 
     private
 
