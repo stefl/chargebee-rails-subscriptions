@@ -140,7 +140,7 @@ module ChargebeeRails
         plan_id: ::Plan.find_by(plan_id: subscription.plan_id).id,
         plan_quantity: subscription.plan_quantity,
         status: subscription.status,
-        event_last_modified_at: event.occurred_at,
+        event_last_modified_at: Time.at(event.occurred_at),
         updated_at: Time.now,
         chargebee_data: chargebee_subscription_data(subscription)
       }
@@ -165,7 +165,7 @@ module ChargebeeRails
         card_last4: card.last4,
         card_type: card.card_type,
         status: customer.payment_method.status,
-        event_last_modified_at: event.occurred_at,
+        event_last_modified_at: Time.at(event.occurred_at),
         updated_at: Time.now
       }
     end
